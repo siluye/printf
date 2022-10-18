@@ -66,4 +66,4 @@ _printf("%s, %s %d, %d\\n", weekday, month, day, year);
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Seife Demissie & Yared dejene muluneh 
+Seife Demissie, Yared dejene muluneh 
