@@ -16,12 +16,15 @@ int print_hex(unsigned int n, unsigned int c)
 	char diff;
 	int count;
 
-	m = 268435456; /* (16 ^ 7) */
+	m = 268435456;
+
 	if (c)
 		diff = 'A' - ':';
 	else
 		diff = 'a' - ':';
+
 	a[0] = n / m;
+
 	for (i = 1; i < 8; i++)
 	{
 		m /= 16;
@@ -115,8 +118,9 @@ int print_p(va_list p)
 	_putchar('0');
 	_putchar('x');
 	count = 2;
-	m = _pow(16, 15); /* 16 ^ 15 */
+	m = _pow(16, 15);
 	a[0] = n / m;
+
 	for (i = 1; i < 16; i++)
 	{
 		m /= 16;

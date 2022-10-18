@@ -58,6 +58,7 @@ int print_d(va_list d)
 	count = 0;
 	m = 1000000000;
 	a[0] = n / m;
+
 	for (j = 1; j < 10; j++)
 	{
 		m /= 10;

@@ -30,6 +30,7 @@ int print_s(va_list s)
 
 	if (str == NULL)
 		str = "(null)";
+
 	for (count = 0; str[count]; count++)
 	{
 		_putchar(str[count]);
@@ -60,6 +61,7 @@ static int hex_print(char c)
 		else
 			_putchar('0' + d[count]);
 	}
+
 	return (count);
 }
 
@@ -78,6 +80,7 @@ int print_S(va_list S)
 
 	if (str == NULL)
 		str = "(null)";
+
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] < 32 || str[i] >= 127)
@@ -112,6 +115,7 @@ int print_r(va_list r)
 	str = va_arg(r, char *);
 	if (str == NULL)
 		str = ")llun(";
+
 	for (i = 0; str[i]; i++)
 		;
 	for (i -= 1; i >= 0; i--)

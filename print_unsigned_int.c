@@ -16,6 +16,7 @@ int print_u(va_list u)
 	n = va_arg(u, unsigned int);
 	m = 1000000000; /* (10 ^ 9) */
 	a[0] = n / m;
+
 	for (i = 1; i < 10; i++)
 	{
 		m /= 10;
@@ -49,6 +50,7 @@ int print_o(va_list o)
 	n = va_arg(o, unsigned int);
 	m = 1073741824; /* (8 ^ 10) */
 	a[0] = n / m;
+
 	for (i = 1; i < 11; i++)
 	{
 		m /= 8;
@@ -82,6 +84,7 @@ int print_b(va_list b)
 	n = va_arg(b, unsigned int);
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
+
 	for (i = 1; i < 32; i++)
 	{
 		m /= 2;

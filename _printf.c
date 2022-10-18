@@ -7,6 +7,7 @@
  *
  * Return: pointer to valid function or NULL
  */
+
 static int (*check_for_specifiers(const char *format))(va_list)
 {
 	unsigned int i;
@@ -43,6 +44,7 @@ static int (*check_for_specifiers(const char *format))(va_list)
  *
  * Return: number of characters printed
  */
+
 int _printf(const char *format, ...)
 {
 	unsigned int i = 0, count = 0;
@@ -61,6 +63,7 @@ int _printf(const char *format, ...)
 		}
 		if (!format[i])
 			return (count);
+
 		f = check_for_specifiers(&format[i + 1]);
 		if (f != NULL)
 		{

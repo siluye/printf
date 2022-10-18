@@ -1,13 +1,13 @@
 .TH man 3 "18 October 2022" "0.10" "_printf man page"
-.SH NAME
-.B _printf
-- Formatted output conversion.
-.SH SYNOPSIS
-.B #include "main.h"
 
-.B int _printf(const char *
-.I format
-.B , ...)
+.SH NAME
+.B _printf - Formatted output conversion.
+
+.SH SYNOPSIS
+.B #include \fB"main.h"
+
+.B int _printf(const char *\fI format\fB , ...)
+
 .SH DESCRIPTION
 .B _printf()
 Prints to standard output under the control of a 
