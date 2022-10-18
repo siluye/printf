@@ -6,6 +6,7 @@
  *
  * Return: number of chars and digits printed
  */
+
 int print_i(va_list i)
 {
 	int a[10];
@@ -15,6 +16,7 @@ int print_i(va_list i)
 	count = 0;
 	m = 1000000000;
 	a[0] = n / m;
+
 	for (j = 1; j < 10; j++)
 	{
 		m /= 10;
@@ -36,6 +38,7 @@ int print_i(va_list i)
 			count++;
 		}
 	}
+
 	return (count);
 }
 
@@ -45,6 +48,7 @@ int print_i(va_list i)
  *
  * Return: number of chars and digits printed
  */
+
 int print_d(va_list d)
 {
 	int a[10];
@@ -75,5 +79,6 @@ int print_d(va_list d)
 			count++;
 		}
 	}
+
 	return (count);
 }
