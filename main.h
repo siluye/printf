@@ -3,6 +3,12 @@
 
 #include <stdarg.h>
 
+#define F_MINUS 1
+#define F_PLUS 2
+#define F_ZERO 4
+#define F_HASH 8
+#define F_SPACE 16
+
 /**
  * struct print - structure for printing various types
  * @t: type to print
@@ -15,10 +21,11 @@ typedef struct print
 	int (*f)(va_list);
 } print_t;
 
-unsigned char handle_flags(const char *flags, char *index);
-unsigned char handle_length(const char *modifier, char *index);
-int handle_width(va_list args, const char *modifier, char *index);
-int handle_precision(va_list args, const char *modifier, char *index);
+int get_flags(const char *format, int *i);
+int get_width(const char *format, int *i, va_list list);
+int get_precision(const char *format, int *i, va_list list);
+int get_size(const char *format, int *i);
+
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list c);
