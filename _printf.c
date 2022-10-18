@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
    	 }
    	 else if (flag == 1)
    	 {
-  		
+  		  flag = 0;
    		 switch (format[count])
    		 {
    			 case 'c':
