@@ -15,6 +15,10 @@ typedef struct print
 	int (*f)(va_list);
 } print_t;
 
+unsigned char handle_flags(const char *flags, char *index);
+unsigned char handle_length(const char *modifier, char *index);
+int handle_width(va_list args, const char *modifier, char *index);
+int handle_precision(va_list args, const char *modifier, char *index);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list c);
