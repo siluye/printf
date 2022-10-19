@@ -25,7 +25,8 @@ int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
-
+int printf_srev(va_list args);
+int printf_rot13(va_list args);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list c);
