@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * check_for_specifiers - checks if there is a valid format specifier
- * @format: possible format specifier
- *
- * Return: pointer to valid function or NULL
- */
+  * _printf - produces output according to a format.
+  * @format: a character string.
+  * Return: number of characters printed(
+  * excluding the null terminator)
+  */
 
 static int (*check_for_specifiers(const char *format))(va_list)
 {
