@@ -1,4 +1,7 @@
-oid print_buffer(char buffer[], int *buff_ind);
+#include "main.h"
+#include <stdio.h>
+
+void print_buffer(char buffer[], int *buff_ind);
 
 /**
  * _printf - Printf function
