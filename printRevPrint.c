@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_reverse - Prints reverse string.
  * @types: Lista of arguments
