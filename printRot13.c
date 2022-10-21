@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_rot13string - Print a string in rot13.
  * @types: Lista of arguments
