@@ -1,26 +1,24 @@
 .TH man 3 "17 October 2022" "0.10" "_printf man page"
-
 .SH NAME
-.B _printf - Formatted output conversion.
-
+.B _printf
+- Formatted output conversion.
 .SH SYNOPSIS
 .B #include \fB"main.h"
 
-.B int _printf(const char *\fI format\fB , ...)
-
+.B int _printf(const char 
+.I format
+.B , ...)
 .SH DESCRIPTION
 .B _printf()
 Prints to standard output under the control of a 
 .I format
 string that specifies how subsequent arguments are converted for output. 
 .SH Return value
-On successful return, these functions return the number of characters printed, excluding the null byte used to end output to strings.
+Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
+
 If an output error is encountered, a negative value is returned.
-
 .SH Format of the format string
-The format string is composed of 0 or more directives (ordinary characters that are not %), which are copied to the output stream. The format string is also composed of conversion specifications, each of which result in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character % and ends with the conversion specifier.
-The argument must correspond properly with the conversion specifier. By default, the arguments are used in the order given.
-
+The format string is composed of 0 or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each
 .SH The conversion specifier
 A character that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
 .TP
@@ -67,5 +65,4 @@ _printf("%s, %s %d, %d\\n", weekday, month, day, year);
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Seife Shiferaw Demissie, Yared Dejene Muluneh 
-
+Seife Shiferaw Demissie, Yared Dejene Muluneh
