@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _print_str - prints a string
  * @string: string to be printed
