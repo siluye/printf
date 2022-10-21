@@ -8,5 +8,5 @@ ofcourse after a successful execution.
 
 Prototype: int _printf(const char *format, ...)
 
-Partners or Collaborators
+Partners or Collaborators:
 Seife Shiferaw and Yared Dejene
