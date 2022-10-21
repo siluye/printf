@@ -1,9 +1,9 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
   * to_Binary - convert unsigned int to binary.
   * @n: number passed for convertion.
+  *
   * Return: number of base 2 characters.
   */
 

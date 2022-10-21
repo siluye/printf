@@ -3,7 +3,6 @@
 /**
  * _print_str - prints a string
  * @string: string to be printed
- *
  * Return: length of printed characters
  */
 
