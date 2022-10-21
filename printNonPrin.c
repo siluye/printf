@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_non_printable - Prints ascii codes in hexa of non printable chars
  * @types: Lista of arguments
