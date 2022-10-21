@@ -8,8 +8,10 @@
  * @width: get width.
  * @precision: Precision specification
  * @size: Size specifier
+ *
  * Return: Numbers of char printed.
  */
+
 int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -26,6 +28,7 @@ int print_binary(va_list types, char buffer[],
 	n = va_arg(types, unsigned int);
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
+
 	for (i = 1; i < 32; i++)
 	{
 		m /= 2;
