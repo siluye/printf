@@ -1,85 +1,81 @@
 #include "main.h"
-#include <stdlib.h>
+#include <stdarg.h>
+#include <stdio.h>
 
 /**
   * _printf - produces output according to a format.
   * @format: a character string.
+  *
   * Return: number of characters printed(
   * excluding the null terminator)
   */
 
-static int (*check_for_specifiers(const char *format))(va_list)
-{
-	unsigned int i;
-	print_t p[] = {
-		{"c", print_c},
-		{"s", print_s},
-		{"i", print_i},
-		{"d", print_d},
-		{"u", print_u},
-		{"b", print_b},
-		{"o", print_o},
-		{"x", print_x},
-		{"X", print_X},
-		{"p", print_p},
-		{"S", print_S},
-		{"r", print_r},
-		{"R", print_R},
-		{NULL, NULL}
-	};
-
-	for (i = 0; p[i].t != NULL; i++)
-	{
-		if (*(p[i].t) == *format)
-		{
-			break;
-		}
-	}
-	return (p[i].f);
-}
-
-/**
- * _printf - prints anything
- * @format: list of argument types passed to the function
- *
- * Return: number of characters printed
- */
-
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, count = 0;
-	va_list valist;
-	int (*f)(va_list);
+	int count;
+	int total = 0;
+	va_list args;
+	int flag = 0;
 
 	if (format == NULL)
-		return (-1);
-	va_start(valist, format);
-	while (format[i])
-	{
-		for (; format[i] != '%' && format[i]; i++)
-		{
-			_putchar(format[i]);
-			count++;
-		}
-		if (!format[i])
-			return (count);
+		return (0);
 
-		f = check_for_specifiers(&format[i + 1]);
-		if (f != NULL)
+	va_start(args, format);
+	for (count = 0; *(format + count) != '\0'; count++)
+	{
+		if (format[count] == '%')
 		{
-			count += f(valist);
-			i += 2;
-			continue;
+			flag = 1;
 		}
-		if (!format[i + 1])
-			return (-1);
-		_putchar(format[i]);
-		count++;
-		if (format[i + 1] == '%')
-			i += 2;
+		else if (flag == 1)
+		{
+			flag = 0;
+			switch (format[count])
+			{
+				case 'c':
+					_putchar(va_arg(args, int));
+					total += 1;
+					break;
+				case 's':
+					total += _print_str(va_arg(args, char *));
+					break;
+				case '%':
+					_putchar('%');
+					total += 1;
+					break;
+				case 'd':
+					total += _print_int((long)(va_arg(args, int)));
+					break;
+				case 'i':
+					total += _print_int((long)(va_arg(args, int)));
+					break;
+				case 'b':
+					total += to_Binary(va_arg(args, int));
+					break;
+				case 'u':
+					total += _print_int(va_arg(args, unsigned int));
+					break;
+				case 'o':
+					total += to_Octal(va_arg(args, int));
+					break;
+				case 'x':
+					total += to_Hexa(va_arg(args, int));
+					break;
+				case 'X':
+					total += to_Hexa(va_arg(args, int));
+					break;
+				default:
+					_putchar('%');
+					_putchar(format[count]);
+					total += 2;
+			}
+		}
 		else
-			i++;
+		{
+			_putchar(format[count]);
+			total += 1;
+		}
 	}
-	va_end(valist);
-	return (count);
+	va_end(args);
+	return (total);
 }

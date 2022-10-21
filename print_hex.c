@@ -30,6 +30,7 @@ int print_hex(unsigned int n, unsigned int c)
 		m /= 16;
 		a[i] = (n / m) % 16;
 	}
+
 	for (i = 0, sum = 0, count = 0; i < 8; i++)
 	{
 		sum += a[i];
@@ -87,6 +88,7 @@ static unsigned long _pow(unsigned int base, unsigned int exponent)
 	{
 		ans *= base;
 	}
+
 	return (ans);
 }
 
@@ -120,7 +122,6 @@ int print_p(va_list p)
 	count = 2;
 	m = _pow(16, 15);
 	a[0] = n / m;
-
 	for (i = 1; i < 16; i++)
 	{
 		m /= 16;
@@ -138,6 +139,5 @@ int print_p(va_list p)
 			count++;
 		}
 	}
-
 	return (count);
 }

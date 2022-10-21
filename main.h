@@ -3,44 +3,15 @@
 
 #include <stdarg.h>
 
-#define F_MINUS 1
-#define F_PLUS 2
-#define F_ZERO 4
-#define F_HASH 8
-#define F_SPACE 16
+#define NULL ((void *)0)
 
-/**
- * struct print - structure for printing various types
- * @t: type to print
- * @f: function to print
- */
-
-typedef struct print
-{
-	char *t;
-	int (*f)(va_list);
-} print_t;
-
-int get_flags(const char *format, int *i);
-int get_width(const char *format, int *i, va_list list);
-int get_precision(const char *format, int *i, va_list list);
-int get_size(const char *format, int *i);
-int printf_srev(va_list args);
-int printf_rot13(va_list args);
 int _putchar(char c);
+int _print_str(char *string);
+int _print_int(long int var);
 int _printf(const char *format, ...);
-int print_c(va_list c);
-int print_s(va_list s);
-int print_i(va_list i);
-int print_d(va_list d);
-int print_u(va_list u);
-int print_b(va_list b);
-int print_o(va_list o);
-int print_x(va_list x);
-int print_X(va_list X);
-int print_p(va_list p);
-int print_S(va_list S);
-int print_r(va_list r);
-int print_R(va_list R);
+int to_Binary(unsigned int n);
+int to_Octal(unsigned int n);
+int _power_recursion(int x, int y);
+int to_Hexa(unsigned int num);
 
 #endif  /* _MAIN_H */
